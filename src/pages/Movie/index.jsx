@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { BsGraphUp, BsWallet2, BsHourglassSplit, BsFillFileEarmarkTextFill } from 'react-icons/bs'
 
-import MovieCard from '../components/MovieCard'
+import MovieCard from '../../components/MovieCard'
 
-import './Movie.css'
+import * as Styled from './style'
 
 const moviesURL = import.meta.env.VITE_API
 const apiKey = import.meta.env.VITE_API_KEY
@@ -33,7 +33,7 @@ const Movie = () => {
   }, [])
 
   return (
-    <div className="movie-page">
+    <Styled.Container>
       {movie && (
         <>
           <MovieCard movie={movie} showLink={false} />
@@ -64,7 +64,7 @@ const Movie = () => {
           </div>
         </>
       )}
-    </div>
+    </Styled.Container>
   )
 }
 
